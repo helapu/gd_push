@@ -19,6 +19,16 @@ defmodule GdPush.Router do
     get "/", PageController, :index
   end
 
+  # use scope like a resoure
+  scope "/hello", GdPush do
+    pipe_through :browser
+
+    get "/", HelloController, :index
+    get "/:messenger", HelloController, :show
+    # resources "/users", UserController
+
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", GdPush do
   #   pipe_through :api
