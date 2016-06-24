@@ -17,6 +17,9 @@ defmodule GdPush.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/users", UserController
+    resources "/books", BookController, except: [:new, :edit]
+
   end
 
   # use scope like a resoure
@@ -26,7 +29,6 @@ defmodule GdPush.Router do
     get "/", HelloController, :index
     get "/:messenger", HelloController, :show
     # resources "/users", UserController
-
   end
 
   # Other scopes may use custom stacks.

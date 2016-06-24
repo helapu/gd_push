@@ -2,12 +2,13 @@ defmodule GdPush.HelloController do
   use GdPush.Web, :controller
 
   def index(conn, _params) do
+    conn = put_session(conn, :message, "new stuff we just set in the session")
     render conn, "index.html"
   end
 
   def show(conn, %{"messenger" => messenger}) do
     conn
-    |> put_flash(:info, "你好，欢迎登陆Hello")
+    |> put_flash(:info, message = get_session(conn, :message) )
     |> render "show.html", messenger: messenger
     #
     # |> put_status(404)
