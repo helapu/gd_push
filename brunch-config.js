@@ -64,6 +64,12 @@ exports.config = {
   },
 
   npm: {
-    enabled: true
+    enabled: true,
+    styles: {
+      bootstrap: ['dist/css/bootstrap.min.css']
+    },
+    globals: {
+      d3: 'd3' // 数据可视化 wnidown.d3访问
+    }
   }
 };
