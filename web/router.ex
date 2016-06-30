@@ -26,8 +26,6 @@ defmodule GdPush.Router do
     pipe_through :browser
 
     get "/", HelloController, :index
-    get "/:messenger", HelloController, :show
-    # resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.
