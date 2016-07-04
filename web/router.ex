@@ -31,7 +31,9 @@ defmodule GdPush.Router do
   # Other scopes may use custom stacks.
   scope "/api", GdPush do
     pipe_through :api
-
+    scope "/V1", V1 do
+      resources "/books", BookController #, except: [:new, :edit]
+    end
     resources "/books", BookController #, except: [:new, :edit]
   end
 end

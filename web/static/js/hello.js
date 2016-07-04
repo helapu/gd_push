@@ -1,5 +1,6 @@
 import {Socket, LongPoller} from "phoenix"
 import $ from 'jquery'
+import Cookies from 'js-cookie'
 
 class InnerHello {
 
@@ -14,12 +15,13 @@ class InnerHello {
     var $messages  = $("#messages")
     var $input     = $("#message-input")
     var $username  = $("#username")
+    var $onlinecount  = $("#onlinecount")
 
     socket.onOpen( ev => console.log("OPEN", ev) )
     socket.onError( ev => console.log("ERROR", ev) )
     socket.onClose( e => console.log("CLOSE", e))
 
-    var chan = socket.channel("rooms:boom", {})
+    var chan = socket.channel("rooms:boom", {user: "helapu", pwd: "4242"})
     chan.join()
       .receive("ok", resp => { console.log("Joined successfully", resp) })
       .receive("error", resp => { console.log("Unable to join", resp) })
@@ -27,11 +29,25 @@ class InnerHello {
     chan.onError(e => console.log("something went wrong", e))
     chan.onClose(e => console.log("channel closed", e))
 
+    $username.val( Cookies.get("username") )
+    console.log( Cookies.get("username") );
+
+    $username.change(function() {
+      console.log($(this).val());
+      Cookies.set("username", "helapu");
+    })
+
+
     $input.off("keypress").on("keypress", e => {
       if (e.keyCode == 13) {
         chan.push("new:msg", {user: $username.val(), body: $input.val()})
         $input.val("")
       }
+    })
+
+    chan.on("count:online", msg => {
+      console.log(  );
+      $onlinecount.text( "当前在线人数 " + msg["online"] )
     })
 
     chan.on("new:msg", msg => {
