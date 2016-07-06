@@ -1,5 +1,4 @@
 import {Socket, LongPoller} from "phoenix"
-import $ from 'jquery'
 import Cookies from 'js-cookie'
 
 class InnerHello {
@@ -72,9 +71,4 @@ class InnerHello {
 
 }
 
-export var Hello = {
-  run: function(){
-    InnerHello.init()
-    console.log("Hello!")
-  }
-}
+InnerHello.init()

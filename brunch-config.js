@@ -55,7 +55,8 @@ exports.config = {
       bootstrap: ['dist/css/bootstrap.min.css']
     },
     globals: {
-      d3: 'd3' // 数据可视化 wnidown.d3访问
+      d3: 'd3', // 数据可视化 wnidown.d3访问
+      $: 'jquery'
     }
   }
 };

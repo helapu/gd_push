@@ -3,7 +3,7 @@
     <div class="col-md-8">
 
       <p id="onlinecount">
-        
+
       </p>
 
     </div>
@@ -28,4 +28,4 @@
   </div>
 </div>
 
-<script>require("web/static/js/hello").Hello.run()</script>
+<script>require("web/static/js/hello")</script>
