@@ -1,7 +1,7 @@
 defmodule GdPush.Endpoint do
   use Phoenix.Endpoint, otp_app: :gd_push
 
-  socket "/socket", GdPush.UserSocket
+  socket "/socket", GdPush.ChatSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #

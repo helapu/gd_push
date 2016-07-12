@@ -1,4 +1,4 @@
-defmodule GdPush.HelloController do
+defmodule GdPush.ChatController do
   use GdPush.Web, :controller
 
   def index(conn, _params) do
@@ -6,13 +6,8 @@ defmodule GdPush.HelloController do
     # conn = put_session(conn, :message, "new stuff we just set in the session")
     # message = get_session(conn, :message)
     # System.cmd "say", [message]
+    render conn, "index.html"
 
-    conn
-    |> put_flash(:info, message = "欢迎访问")
-    |> render "index.html"
-
-    # |> put_status(404)
-    # |> send_resp(404, "You com to the lonely island")
   end
 
 end

@@ -17,23 +17,18 @@ defmodule GdPush.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/users", UserController
-
-  end
-
-  # use scope like a resoure
-  scope "/hello", GdPush do
-    pipe_through :browser
-
-    get "/", HelloController, :index
+    get "/chat", ChatController, :index
+    resources "/devices", DeviceController
   end
 
   # Other scopes may use custom stacks.
   scope "/api", GdPush do
     pipe_through :api
+
     scope "/V1", V1 do
-      resources "/books", BookController #, except: [:new, :edit]
+      get "/apns", ApnsController, :connect
+      post "/apns", ApnsController, :push
     end
-    resources "/books", BookController #, except: [:new, :edit]
   end
+
 end

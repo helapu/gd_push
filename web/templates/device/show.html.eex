@@ -1,0 +1,56 @@
+<h2>Show device</h2>
+
+<ul>
+
+  <li>
+    <strong>Uid:</strong>
+    <%= @device.uid %>
+  </li>
+
+  <li>
+    <strong>Nickname:</strong>
+    <%= @device.nickname %>
+  </li>
+
+  <li>
+    <strong>Token:</strong>
+    <%= @device.token %>
+  </li>
+
+  <li>
+    <strong>Platform:</strong>
+    <%= @device.platform %>
+  </li>
+
+  <li>
+    <strong>Extra:</strong>
+    <%= @device.extra %>
+  </li>
+
+</ul>
+
+
+
+
+<%= link "Edit", to: device_path(@conn, :edit, @device) %>
+<%= link "Back", to: device_path(@conn, :index) %>
+
+<h2>APNS 测试服务器</h2>
+
+<%= form_for @conn, apns_path(@conn, :push), [as: :push, uid: @device.uid], fn f -> %>
+
+  <div class="form-group">
+    <%= label f, "Token", class: "control-label" %>
+    <%= text_input f, :device_token,  value: @device.token%>
+  </div>
+
+  <div class="form-group">
+    <%= label f, "alert_body", class: "control-label" %>
+    <%= text_input f, :alert_body%>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+
+<% end %>

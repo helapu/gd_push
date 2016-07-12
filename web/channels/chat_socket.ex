@@ -1,4 +1,4 @@
-defmodule GdPush.UserSocket do
+defmodule GdPush.ChatSocket do
   use Phoenix.Socket
   require Logger
 

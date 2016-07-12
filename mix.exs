@@ -20,7 +20,8 @@ defmodule GdPush.Mixfile do
     [mod: {GdPush, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html,
                     :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :redix]
+                    :phoenix_ecto, :postgrex, :redix,
+                    :tirexs, :apns ]
                   ]
   end
 
@@ -40,7 +41,9 @@ defmodule GdPush.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:redix, ">= 0.0.0"}
+     {:redix, ">= 0.0.0"},
+     {:apns, "~> 0.9.1"},
+     {:tirexs, "~> 0.8"}
    ]
   end
 
