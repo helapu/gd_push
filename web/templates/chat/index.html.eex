@@ -14,18 +14,37 @@
 </div>
 <div id="footer">
   <div class="container">
+
     <div class="row">
-      <div class="col-md-2">
+
+      <div class="col-md-3">
         <div class="input-group">
-          <span class="input-group-addon">@</span>
+          <span class="input-group-addon">昵称</span>
           <input id="username" type="text" class="form-control" placeholder="username">
         </div><!-- /input-group -->
-      </div><!-- /.col-lg-6 -->
-      <div class="col-md-10">
-        <input id="message-input" class="form-control" />
-      </div><!-- /.col-lg-6 -->
+      </div>
+      <div class="col-md-3">
+        <div class="input-group">
+          <span class="input-group-addon">发送给@</span>
+          <input id="tousername" type="text" class="form-control" placeholder="username">
+        </div><!-- /input-group -->
+      </div>
+
+      <div class="col-md-2">
+        <button id="loginbtn" type="button" class="btn btn-info" name="button">登陆</button>
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="input-group">
+          <span class="input-group-addon">信息</span>
+          <input id="message-input" class="form-control" />
+        </div>
+      </div>
     </div><!-- /.row -->
   </div>
 </div>
 
-<script>require("web/static/js/hello")</script>
+<script>require("web/static/js/chat")</script>
