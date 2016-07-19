@@ -4,6 +4,7 @@ exports.config = {
     javascripts: {
       joinTo: "js/app.js"
     },
+
     stylesheets: {
       joinTo: "css/app.css",
       order: {
@@ -52,11 +53,13 @@ exports.config = {
     enabled: true,
     whitelist: ["phoenix", "phoenix_html"],
     styles: {
-      bootstrap: ['dist/css/bootstrap.min.css']
+      bootstrap: ['dist/css/bootstrap.min.css'],
+      weui: ['dist/style/weui.min.css']
     },
     globals: {
       d3: 'd3', // 数据可视化 wnidown.d3访问
-      $: 'jquery'
+      $: 'jquery',
+      Vue: 'vue'
     }
   }
 };

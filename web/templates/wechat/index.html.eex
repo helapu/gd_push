@@ -1,0 +1,33 @@
+
+<style media="screen">
+  .row p {
+    text-align: center;
+  }
+  .row #qrcode {
+    text-align: center;
+    width: auto;
+    height: auto;
+  }
+
+</style>
+
+<div class="container">
+  <div class="row" >
+    <div id="qrcode">
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" >
+    <h2 id='qrsource'><%= "http://#{local_ip}:4000/wechat" %></h2>
+  </div>
+
+  <div class="row">
+    <p>下测验的价值，公司传递的信息, 人文关怀是非常重要的</p>
+  </div>
+  <div class="row">
+    <%= link "开始答题", to: wechat_path(@conn, :qa), class: "weui_btn weui_btn_primary" %>
+  </div>
+</div>
+
+<script>require("web/static/js/health")</script>

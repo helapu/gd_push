@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <h2>监控用户数据流</h2>
+  <p class="lead">莫怕莫怕，我不是坏人。</p>
+</div>
+
+<%= form_for @conn, police_path(@conn, :broadcast), [as: :broadcast], fn f -> %>
+
+  <div class="form-group">
+    <%= label f, "fromuuid", class: "control-label" %>
+    <%= text_input f, :fromuuid, class: "form-control", value: "POLICE" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, "touuid", class: "control-label" %>
+    <%= text_input f, :touuid, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, "msg", class: "control-label" %>
+    <%= text_input f, :msg, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "发射", class: "btn btn-primary" %>
+  </div>
+<% end %>

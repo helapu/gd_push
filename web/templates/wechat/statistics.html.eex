@@ -1,0 +1,41 @@
+<div class="row">
+  <p>
+    <%= gettext "参与答题人数 %{name}", name: "4200" %>
+  </p>
+  <h2>每一题的正确率如下</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <td>
+          题目编号
+        </td>
+        <td>
+          正确率
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          4eoneoueou
+        </td>
+        <td>
+          50%
+        </td>
+      </tr>
+      <tr>
+        <td>
+          4eoneoueou
+        </td>
+        <td>
+          50%
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="row">
+  <%= link "再次测试", to: wechat_path(@conn, :qa), class: "btn btn-default btn-lg" %>
+  <%= link "项目引导", to: wechat_path(@conn, :index), class: "btn btn-default btn-lg" %>
+</div>

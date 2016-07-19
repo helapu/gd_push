@@ -1,0 +1,98 @@
+<style media="screen">
+  .bottom_line {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 144px;
+    background-color: #f5f5f5;
+  }
+  .bottom_line button {
+    height: 144px;
+    width: 50%;
+  }
+  img {
+    width: 100%;
+    height: 122px;
+  }
+</style>
+
+<div id="app">
+
+  <div class="container" v-show="qaChecking">
+
+    <div class="row">
+      <img v-bind:src="curImg" alt="" />
+    </div>
+
+    <div class="row">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+        0
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12" v-show="qaState">
+        <h1>{{curIdxData.q_title}}</h1>
+        <p class="lead">{{curIdxData.q_des}}</p>
+      </div>
+      <div class="col-xs-12"  v-else>
+        <h2>{{curIdxData.a_des}}</h2>
+        <p>{{curIdxData.a_tip}}</p>
+      </div>
+    </div>
+
+    <div class="row bottom_line" v-show="qaState">
+      <div class="col-xs-6">
+        <button v-on:click="aswerFalse" class="btn btn-default btn-lg" name="button"  >误区</button>
+      </div>
+      <div class="col-xs-6" >
+        <button v-on:click="aswerTrue" class="btn btn-default btn-lgs" name="button" >事实</button>
+      </div>
+
+    </div>
+
+    <div class="row bottom_line" v-else>
+      <button v-on:click="nextQa" id='nextq-btn' class="weui_btn weui_btn_primary" >下一题</button>
+    </div>
+
+  </div>
+
+  <div class="container" v-else>
+
+      <div class="row">
+        <div col-md-12>
+          <h1>答题结果是什么呢</h1>
+          <table class="table">
+            <head>
+
+            </head>
+
+            <tbody>
+              <tr v-for="item in statistics" track-by="$index">
+                <td>
+                  {{allData[$index].q_des}}
+                </td>
+                <td>
+                  {{allData[$index].a_des}}
+                </td>
+                <td>
+                  {{allData[$index].a_tip}}
+                </td>
+                <td >
+                  {{item}}
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <%= link "查看其他人答题情况", to: wechat_path(@conn, :statistics), class: "weui_btn weui_btn_primary" %>
+        </div>
+      </div>
+  </div>
+
+</div>
+
+<script>require("web/static/js/qa")</script>

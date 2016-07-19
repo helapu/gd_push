@@ -1,36 +1,89 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+<style media="screen">
+  body {
+    background-color: #fff;
+  }
+  .footer {
+    background-color: #eee;
+  }
+  .why {
+    background-color: #abc;
+  }
+</style>
+
+<div class="container">
+  <nav class="navbar navbar-static-top">
+    <a class="navbar-brand" href="#">Brand</a>
+    <ul class="nav navbar-nav collapse navbar-collapse">
+      <li><%= link "Wechat", to: wechat_path(@conn, :index)%></li>
+      <li><%= link "Statistics", to: wechat_path(@conn, :statistics) %></li>
+    </ul>
+  </nav
+
 </div>
 
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
+<div class="container">
+  <div class="row">
+    <div class="jumbotron">
+      <h2>Brand Detail</h2>
+      <p class="lead">
+        If there is a will, there is a way.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container why">
+
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Got you 1111</h2>
+      <p>
+        If there is a will, there is a way.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h2>Got you  2222</h2>
+      <p>
+        If there is a will, there is a way.
+      </p>
+    </div>
   </div>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Got you 3333</h2>
+      <p>
+        If there is a will, there is a way.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h2>Got you 4444</h2>
+      <p>
+        If there is a will, there is a way.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h2>Got you 5555</h2>
+      <p>
+        If there is a will, there is a way.
+      </p>
+    </div>
   </div>
+
+</div>
+
+<div class="container footer">
+  <div class="row">
+    <p>
+      以 MIT 许可证发布
+    </p>
+    <p>
+      Copyright (c) 2016 Fuck You
+    </p>
+
+  </div>
+
 </div>

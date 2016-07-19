@@ -1,5 +1,4 @@
 import {Socket, LongPoller} from "phoenix"
-// import Cookies from 'js-cookie'
 
 class WebChat {
 
@@ -72,7 +71,6 @@ class WebChat {
 
     return(`<p><a href='#'>[${username}]</a>&nbsp; ${info}</p>`)
   }
-
 }
 
 WebChat.init()
